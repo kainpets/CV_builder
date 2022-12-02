@@ -12,14 +12,35 @@ export default function Form() {
     phone: "",
     city: "",
   });
+  
+  const [educationValues, setEducationValues] = useState({
+    university: "",
+    degree: "",
+    educationStart: "",
+    educationEnd: "",
+  });
 
-  function handleSubmit(e) {
+  function handlePersonalClick(e) {
     e.preventDefault();
     console.log(personalValues);
   }
 
-  function handleChange(e) {
-    setPersonalValues({ ...personalValues, [e.target.name]: e.target.value });
+  function handleEducationClick(e) {
+    e.preventDefault();
+    console.log(educationValues);
+  }
+
+  function handlePersonalChange(e) {
+    setPersonalValues({ 
+      ...personalValues,
+      [e.target.name]: e.target.value });
+  }
+
+  function handleEducationChange(e) {
+    setEducationValues({
+      ...educationValues,
+      [e.target.name]: e.target.value
+    });
   }
 
   return (
@@ -31,7 +52,6 @@ export default function Form() {
         }}
         noValidate
         autoComplete="off"
-        onSubmit={handleSubmit}
       >
         <Typography variant="h4">Personal Information </Typography>
         <TextField
@@ -39,8 +59,7 @@ export default function Form() {
           label="First Name"
           variant="standard"
           name="firstName"
-          value={personalValues.firstName}
-          onChange={handleChange}
+          onChange={handlePersonalChange}
         />
         <br />
         <TextField
@@ -48,7 +67,7 @@ export default function Form() {
           label="Last Name"
           variant="standard"
           name="lastName"
-          onChange={handleChange}
+          onChange={handlePersonalChange}
         />
         <br />
         <TextField
@@ -56,7 +75,7 @@ export default function Form() {
           label="Email"
           variant="standard"
           name="email"
-          onChange={handleChange}
+          onChange={handlePersonalChange}
         />
         <br />
         <TextField
@@ -64,7 +83,7 @@ export default function Form() {
           label="Phone Number"
           variant="standard"
           name="phone"
-          onChange={handleChange}
+          onChange={handlePersonalChange}
         />
         <br />
         <TextField
@@ -72,13 +91,49 @@ export default function Form() {
           label="City"
           variant="standard"
           name="city"
-          onChange={handleChange}
+          onChange={handlePersonalChange}
         />
         <br />
         <TextField id="photo" variant="standard" type="file" name="photo" />
         <br />
-        <Button variant="contained" type="submit">
-          Submit
+        <Button variant="contained" type="click" onClick={handlePersonalClick}>
+          Submit Personal Info
+        </Button>
+        <Typography variant="h4">Education Information </Typography>
+        <TextField
+          id="university"
+          label="University"
+          variant="standard"
+          name="university"
+          onChange={handleEducationChange}
+        />
+        <br />
+        <TextField
+          id="degree"
+          label="Degree"
+          variant="standard"
+          name="degree"
+          onChange={handleEducationChange}
+        />
+        <br />
+        <TextField
+          id="education-start"
+          label="Year You Begun Studies"
+          variant="standard"
+          name="educationStart"
+          onChange={handleEducationChange}
+        />
+        <br />
+        <TextField
+          id="education-end"
+          label="Year You Ended Studies"
+          variant="standard"
+          name="educationEnd"
+          onChange={handleEducationChange}
+        />
+        <br />
+        <Button variant="contained" type="click" onClick={handleEducationClick}>
+          Submit Education Info
         </Button>
       </Box>
     </>

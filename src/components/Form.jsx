@@ -3,6 +3,7 @@ import TextField from "@mui/material/TextField";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
+import Result from "./Result";
 
 export default function Form() {
   const [personalValues, setPersonalValues] = useState({
@@ -12,13 +13,15 @@ export default function Form() {
     phone: "",
     city: "",
   });
-  
+
   const [educationValues, setEducationValues] = useState({
     university: "",
     degree: "",
     educationStart: "",
     educationEnd: "",
   });
+
+  const [addMoreEducation, setaddMoreEducation] = useState(false);
 
   function handlePersonalClick(e) {
     e.preventDefault();
@@ -27,19 +30,20 @@ export default function Form() {
 
   function handleEducationClick(e) {
     e.preventDefault();
-    console.log(educationValues);
+    setaddMoreEducation(true);
   }
 
   function handlePersonalChange(e) {
-    setPersonalValues({ 
+    setPersonalValues({
       ...personalValues,
-      [e.target.name]: e.target.value });
+      [e.target.name]: e.target.value,
+    });
   }
 
   function handleEducationChange(e) {
     setEducationValues({
       ...educationValues,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   }
 
@@ -135,6 +139,12 @@ export default function Form() {
         <Button variant="contained" type="click" onClick={handleEducationClick}>
           Submit Education Info
         </Button>
+        {/* TODO add more education info if users wants to */}
+        {addMoreEducation && <Button variant="contained" type="click" >
+          Add More Education Info
+        </Button>}
+        {/* TODO render education part of the form and set a clean slate */}
+        {addMoreEducation && <Result values={educationValues}></Result>}
       </Box>
     </>
   );

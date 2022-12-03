@@ -141,7 +141,7 @@ export default function Form() {
         </Button>
         {/* TODO add more education info if users wants to */}
         {addMoreEducation && <Button variant="contained" type="click" >
-          Add More Education Info
+          Add More 
         </Button>}
         {/* TODO render education part of the form and set a clean slate */}
         {addMoreEducation && <Result values={educationValues}></Result>}

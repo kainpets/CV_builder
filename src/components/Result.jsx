@@ -1,12 +1,15 @@
 export default function Result(props) {
-  console.log(props.values);
 
-  const { university, degree, educationStart, educationEnd } = props.values;
+  const educationValues = Object.entries(props.values);
 
+  console.log(educationValues);
   return (
     <>
       <ul>
         <h1>Renders</h1>
+        {educationValues.map(value => {
+          return <li key="value">{value}</li>
+        })}
       </ul>
     </>
   );

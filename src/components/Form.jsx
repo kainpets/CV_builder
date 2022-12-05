@@ -12,25 +12,15 @@ export default function Form() {
     email: "",
     phone: "",
     city: "",
-  });
-
-  const [educationValues, setEducationValues] = useState({
     university: "",
     degree: "",
     educationStart: "",
     educationEnd: "",
   });
 
-  const [addMoreEducation, setaddMoreEducation] = useState(false);
-
   function handlePersonalClick(e) {
     e.preventDefault();
     console.log(personalValues);
-  }
-
-  function handleEducationClick(e) {
-    e.preventDefault();
-    setaddMoreEducation(true);
   }
 
   function handlePersonalChange(e) {
@@ -40,11 +30,9 @@ export default function Form() {
     });
   }
 
-  function handleEducationChange(e) {
-    setEducationValues({
-      ...educationValues,
-      [e.target.name]: e.target.value,
-    });
+  function handleSubmit(e) {
+    e.preventDefault();
+    console.log(personalValues);
   }
 
   return (
@@ -56,6 +44,7 @@ export default function Form() {
         }}
         noValidate
         autoComplete="off"
+        onSubmit={handleSubmit}
       >
         <Typography variant="h4">Personal Information </Typography>
         <TextField
@@ -100,16 +89,14 @@ export default function Form() {
         <br />
         <TextField id="photo" variant="standard" type="file" name="photo" />
         <br />
-        <Button variant="contained" type="click" onClick={handlePersonalClick}>
-          Submit Personal Info
-        </Button>
         <Typography variant="h4">Education Information </Typography>
         <TextField
           id="university"
           label="University"
           variant="standard"
           name="university"
-          onChange={handleEducationChange}
+          value={personalValues.university}
+          onChange={handlePersonalChange}
         />
         <br />
         <TextField
@@ -117,7 +104,8 @@ export default function Form() {
           label="Degree"
           variant="standard"
           name="degree"
-          onChange={handleEducationChange}
+          value={personalValues.degree}
+          onChange={handlePersonalChange}
         />
         <br />
         <TextField
@@ -125,7 +113,8 @@ export default function Form() {
           label="Year You Begun Studies"
           variant="standard"
           name="educationStart"
-          onChange={handleEducationChange}
+          value={personalValues.educationStart}
+          onChange={handlePersonalChange}
         />
         <br />
         <TextField
@@ -133,18 +122,13 @@ export default function Form() {
           label="Year You Ended Studies"
           variant="standard"
           name="educationEnd"
-          onChange={handleEducationChange}
+          value={personalValues.educationEnd}
+          onChange={handlePersonalChange}
         />
         <br />
-        <Button variant="contained" type="click" onClick={handleEducationClick}>
-          Submit Education Info
+        <Button variant="contained" type="submit">
+          Submit Your Info
         </Button>
-        {/* TODO add more education info if users wants to */}
-        {addMoreEducation && <Button variant="contained" type="click" >
-          Add More 
-        </Button>}
-        {/* TODO render education part of the form and set a clean slate */}
-        {addMoreEducation && <Result values={educationValues}></Result>}
       </Box>
     </>
   );

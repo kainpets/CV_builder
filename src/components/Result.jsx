@@ -6,9 +6,8 @@ export default function Result(props) {
   return (
     <>
       <ul>
-        <h1>Renders</h1>
-        {educationValues.map(value => {
-          return <li key="value">{value}</li>
+        {educationValues.map((value, index) => {
+          return <li key={index}>{value}</li>
         })}
       </ul>
     </>

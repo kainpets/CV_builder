@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 
-export default function Form({values, onValuesChange, handleSubmit}) {
+export default function Form({values, onValuesChange, handleSubmit, handleResetClick}) {
   
 
   return (
@@ -23,6 +23,7 @@ export default function Form({values, onValuesChange, handleSubmit}) {
           label="First Name"
           variant="standard"
           name="firstName"
+          value={values.firstName}
           onChange={onValuesChange}
         />
         <br />
@@ -31,6 +32,7 @@ export default function Form({values, onValuesChange, handleSubmit}) {
           label="Last Name"
           variant="standard"
           name="lastName"
+          value={values.lastName}
           onChange={onValuesChange}
         />
         <br />
@@ -39,6 +41,7 @@ export default function Form({values, onValuesChange, handleSubmit}) {
           label="Email"
           variant="standard"
           name="email"
+          value={values.email}
           onChange={onValuesChange}
         />
         <br />
@@ -47,6 +50,7 @@ export default function Form({values, onValuesChange, handleSubmit}) {
           label="Phone Number"
           variant="standard"
           name="phone"
+          value={values.phone}
           onChange={onValuesChange}
         />
         <br />
@@ -55,6 +59,7 @@ export default function Form({values, onValuesChange, handleSubmit}) {
           label="City"
           variant="standard"
           name="city"
+          value={values.city}
           onChange={onValuesChange}
         />
         <br />
@@ -96,6 +101,10 @@ export default function Form({values, onValuesChange, handleSubmit}) {
           value={values.educationEnd}
           onChange={onValuesChange}
         />
+        <br />
+        <Button variant="contained" type="reset" onClick={handleResetClick}>
+          Reset
+        </Button>
         <br />
         <Button variant="contained" type="submit">
           Submit Your Info

@@ -27,6 +27,20 @@ function App() {
     console.log(values);
   }
 
+  function handleResetClick(e) {
+    e.preventDefault();
+    setValues({
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      city: "",
+      university: "",
+      degree: "",
+      educationStart: "",
+      educationEnd: "",
+    });
+  }
 
   return (
     <>
@@ -34,8 +48,9 @@ function App() {
       values={values}
       onValuesChange={onValuesChange}
       handleSubmit={handleSubmit}
+      handleResetClick={handleResetClick}
       />
-      <Result />
+      <Result values={values}/>
     </>
   );
 }

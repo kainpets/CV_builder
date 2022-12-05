@@ -1,9 +1,17 @@
-export default function Result(props) {
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+
+export default function Result({values}) {
+
+  const arrayOfValues = Object.values(values)
+  console.log(arrayOfValues);
 
   return (
     <>
-      <ul>
-      </ul>
+      {arrayOfValues.map((value, index) => {
+        return <Typography key={index}>{value}</Typography>
+      })
+        }
     </>
   );
 }

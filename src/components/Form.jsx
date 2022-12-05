@@ -21,10 +21,11 @@ export default function Form({
         noValidate
         autoComplete="off"
       >
-        <Typography variant="h5" sx={{
-          "width": "auto",
-        }}>Personal Information </Typography>
+        <Typography variant="h5">Personal Information </Typography>
         <TextField
+          sx={{
+            "width": "40ch",
+          }}
           id="first-name"
           label="First Name"
           variant="standard"
@@ -34,6 +35,9 @@ export default function Form({
         />
         <br />
         <TextField
+        sx={{
+          "width": "40ch",
+        }}
           id="last-name"
           label="Last Name"
           variant="standard"
@@ -43,6 +47,9 @@ export default function Form({
         />
         <br />
         <TextField
+        sx={{
+          "width": "40ch",
+        }}
           id="email"
           label="Email"
           variant="standard"
@@ -52,6 +59,9 @@ export default function Form({
         />
         <br />
         <TextField
+        sx={{
+          "width": "40ch",
+        }}
           id="phone-number"
           label="Phone Number"
           variant="standard"
@@ -61,6 +71,9 @@ export default function Form({
         />
         <br />
         <TextField
+        sx={{
+          "width": "40ch",
+        }}
           id="city"
           label="City"
           variant="standard"
@@ -76,6 +89,9 @@ export default function Form({
         <br />
         <Typography variant="h5">Education Information </Typography>
         <TextField
+        sx={{
+          "width": "40ch",
+        }}
           id="university"
           label="University"
           variant="standard"
@@ -85,6 +101,9 @@ export default function Form({
         />
         <br />
         <TextField
+        sx={{
+          "width": "40ch",
+        }}
           id="degree"
           label="Degree"
           variant="standard"
@@ -94,6 +113,9 @@ export default function Form({
         />
         <br />
         <TextField
+        sx={{
+          "width": "40ch",
+        }}
           id="education-start"
           label="Year You Begun Studies"
           variant="standard"
@@ -103,11 +125,52 @@ export default function Form({
         />
         <br />
         <TextField
+        sx={{
+          "width": "40ch",
+        }}
           id="education-end"
           label="Year You Ended Studies"
           variant="standard"
           name="educationEnd"
           value={values.educationEnd}
+          onChange={onValuesChange}
+        />
+        <br />
+        <Typography variant="h5">Experience Information </Typography>
+        <TextField
+        sx={{
+          "width": "40ch",
+        }}
+          id="experience"
+          multiline
+          label="Describe Your Previous Experience"
+          variant="standard"
+          name="experience"
+          value={values.experience}
+          onChange={onValuesChange}
+        />
+        <br />
+        <TextField
+        sx={{
+          "width": "40ch",
+        }}
+          id="experience-start"
+          label="Year You Started Your Job"
+          variant="standard"
+          name="experienceStart"
+          value={values.experienceStart}
+          onChange={onValuesChange}
+        />
+        <br />
+        <TextField
+        sx={{
+          "width": "40ch",
+        }}
+          id="experience-end"
+          label="Year You Ended"
+          variant="standard"
+          name="experienceEnd"
+          value={values.experienceEnd}
           onChange={onValuesChange}
         />
         <br />

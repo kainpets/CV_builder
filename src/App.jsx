@@ -13,6 +13,9 @@ function App() {
     degree: "",
     educationStart: "",
     educationEnd: "",
+    experience: "",
+    experienceStart: "",
+    experienceEnd: "",
   });
 
   const [photo, setPhoto] = useState();
@@ -28,7 +31,6 @@ function App() {
     setPhoto(URL.createObjectURL(e.target.files[0]));
     console.log(photo);
   }
-  
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -47,23 +49,23 @@ function App() {
       degree: "",
       educationStart: "",
       educationEnd: "",
+      experience: "",
+      experienceStart: "",
+      experienceEnd: "",
     });
-    setPhoto()
+    setPhoto();
   }
 
   return (
     <>
-      <Form 
-      values={values}
-      onValuesChange={onValuesChange}
-      onPhotoChange={onPhotoChange}
-      handleSubmit={handleSubmit}
-      handleResetClick={handleResetClick}
+      <Form
+        values={values}
+        onValuesChange={onValuesChange}
+        onPhotoChange={onPhotoChange}
+        handleSubmit={handleSubmit}
+        handleResetClick={handleResetClick}
       />
-      <Result 
-      values={values}
-      photoUrl={photo}
-      />
+      <Result values={values} photoUrl={photo} />
     </>
   );
 }

@@ -19,7 +19,10 @@ export default function Result({ values, photoUrl }) {
     university,
     degree,
     studiesStart,
-    studiesEnd
+    studiesEnd,
+    experience,
+    experienceStart,
+    experienceEnd
   ) {
     return {
       fName,
@@ -31,6 +34,9 @@ export default function Result({ values, photoUrl }) {
       degree,
       studiesStart,
       studiesEnd,
+      experience,
+      experienceStart,
+      experienceEnd,
     };
   }
 
@@ -44,25 +50,30 @@ export default function Result({ values, photoUrl }) {
     createData("Degree", values.degree),
     createData("Year Studies Begun", values.educationStart),
     createData("Year Studies Ended", values.educationEnd),
+    createData("Your Previous Experience", values.experience),
+    createData("Year You Began Work", values.experienceStart),
+    createData("Year You Ended Work", values.experienceEnd),
   ];
 
   return (
     <>
       <Box class="result-header">
-<Box>
-        <Typography variant="h4">{values.firstName}</Typography>
-        <Typography variant="h4">{values.lastName}</Typography>
-        <Typography variant="h6">{values.email}</Typography>
+        <Box>
+          <Typography variant="h4">{values.firstName}</Typography>
+          <Typography variant="h4">{values.lastName}</Typography>
+          <Typography variant="h6">{values.email}</Typography>
         </Box>
-        {photoUrl && <Box
-        component="img"
-        sx={{
-          maxHeight: { xs: 250, md: 167 },
-          maxWidth: { xs: 287, md: 250 },
-        }}
-        alt="CV photo"
-        src={photoUrl}
-      />}
+        {photoUrl && (
+          <Box
+            component="img"
+            sx={{
+              maxHeight: { xs: 250, md: 167 },
+              maxWidth: { xs: 287, md: 250 },
+            }}
+            alt="CV photo"
+            src={photoUrl}
+          />
+        )}
       </Box>
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -75,10 +86,7 @@ export default function Result({ values, photoUrl }) {
                 <TableCell component="th" scope="row">
                   {row.fName}
                 </TableCell>
-                <TableCell align="right">{row.lName}</TableCell>
-                <TableCell align="right">{row.email}</TableCell>
-                <TableCell align="right">{row.phoneNumber}</TableCell>
-                <TableCell align="right">{row.city}</TableCell>
+                <TableCell>{row.lName}</TableCell>
               </TableRow>
             ))}
           </TableBody>

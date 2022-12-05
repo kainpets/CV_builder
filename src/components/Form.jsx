@@ -3,21 +3,27 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 
-export default function Form({values, onValuesChange, handleSubmit, handleResetClick}) {
-  
-
+export default function Form({
+  values,
+  onValuesChange,
+  handleResetClick,
+  onPhotoChange
+}) {
   return (
     <>
       <Box
         component="form"
         sx={{
-          "& > :not(style)": { m: 1, width: "40ch" },
+          "display": "flex",
+          "flexDirection": "column",
+          "alignItems": "center",
         }}
         noValidate
         autoComplete="off"
-        onSubmit={handleSubmit}
       >
-        <Typography variant="h4">Personal Information </Typography>
+        <Typography variant="h5" sx={{
+          "width": "auto",
+        }}>Personal Information </Typography>
         <TextField
           id="first-name"
           label="First Name"
@@ -63,9 +69,12 @@ export default function Form({values, onValuesChange, handleSubmit, handleResetC
           onChange={onValuesChange}
         />
         <br />
-        <TextField id="photo" variant="standard" type="file" name="photo" />
+        <Button variant="contained" component="label" >
+          Upload Photo
+          <input hidden accept="image/*" multiple type="file" onChange={onPhotoChange} />
+        </Button>
         <br />
-        <Typography variant="h4">Education Information </Typography>
+        <Typography variant="h5">Education Information </Typography>
         <TextField
           id="university"
           label="University"
@@ -106,9 +115,6 @@ export default function Form({values, onValuesChange, handleSubmit, handleResetC
           Reset
         </Button>
         <br />
-        <Button variant="contained" type="submit">
-          Submit Your Info
-        </Button>
       </Box>
     </>
   );

@@ -15,12 +15,20 @@ function App() {
     educationEnd: "",
   });
 
+  const [photo, setPhoto] = useState();
+
   function onValuesChange(e) {
     setValues({
       ...values,
       [e.target.name]: e.target.value,
     });
   }
+
+  function onPhotoChange(e) {
+    setPhoto(URL.createObjectURL(e.target.files[0]));
+    console.log(photo);
+  }
+  
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -47,10 +55,14 @@ function App() {
       <Form 
       values={values}
       onValuesChange={onValuesChange}
+      onPhotoChange={onPhotoChange}
       handleSubmit={handleSubmit}
       handleResetClick={handleResetClick}
       />
-      <Result values={values}/>
+      <Result 
+      values={values}
+      photoUrl={photo}
+      />
     </>
   );
 }

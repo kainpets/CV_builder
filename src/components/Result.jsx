@@ -1,3 +1,4 @@
+import {useRef} from "react";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -6,8 +7,10 @@ import TableRow from "@mui/material/TableRow";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
+import ReactToPrint from 'react-to-print';
 
 export default function Result({ values, photoUrl }) {
+  const componentRef = useRef();
   console.log(values);
 
   function createData(
@@ -57,6 +60,7 @@ export default function Result({ values, photoUrl }) {
 
   return (
     <>
+    <Box ref={componentRef}>
       <Box class="result-header">
         <Box>
           <Typography variant="h4">{values.firstName}</Typography>
@@ -92,6 +96,11 @@ export default function Result({ values, photoUrl }) {
           </TableBody>
         </Table>
       </TableContainer>
+      </Box>
+<ReactToPrint 
+trigger={() => <button>Print this out!</button>}
+content={() => componentRef.current}
+></ReactToPrint>
     </>
   );
 }

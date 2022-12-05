@@ -54,15 +54,15 @@ export default function Result({ values, photoUrl }) {
         <Typography variant="h4">{values.lastName}</Typography>
         <Typography variant="h6">{values.email}</Typography>
         </Box>
-        <Box
+        {photoUrl && <Box
         component="img"
         sx={{
           maxHeight: { xs: 250, md: 167 },
           maxWidth: { xs: 287, md: 250 },
         }}
-        alt="The house from the offer."
+        alt="CV photo"
         src={photoUrl}
-      />
+      />}
       </Box>
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">

@@ -61,7 +61,7 @@ export default function Result({ values, photoUrl }) {
   return (
     <>
       <Box ref={componentRef}>
-        <Box class="result-header">
+        <Box className="result-header">
           <Box>
             <Typography variant="h4">{values.firstName}</Typography>
             <Typography variant="h4">{values.lastName}</Typography>

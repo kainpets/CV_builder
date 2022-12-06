@@ -29,7 +29,6 @@ function App() {
 
   function onPhotoChange(e) {
     setPhoto(URL.createObjectURL(e.target.files[0]));
-    console.log(photo);
   }
 
   function handleAutoGenerate(e) {
@@ -48,7 +47,7 @@ function App() {
     experienceStart: "2018",
     experienceEnd: "2022",
     })
-    setPhoto("../src/assets/ryszard.jpg")
+    setPhoto("./src/assets/ryszard.jpg")
   }
 
   function handleResetClick(e) {

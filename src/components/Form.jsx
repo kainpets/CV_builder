@@ -7,24 +7,27 @@ export default function Form({
   values,
   onValuesChange,
   handleResetClick,
-  onPhotoChange
+  onPhotoChange,
 }) {
   return (
     <>
       <Box
         component="form"
         sx={{
-          "display": "flex",
-          "flexDirection": "column",
-          "alignItems": "center",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
         }}
         noValidate
-        autoComplete="off"
+        autoComplete="on"
       >
+        <Typography variant="h1" id="title">
+          Resume Generator
+        </Typography>
         <Typography variant="h5">Personal Information </Typography>
         <TextField
           sx={{
-            "width": "40ch",
+            width: "40ch",
           }}
           id="first-name"
           label="First Name"
@@ -35,9 +38,9 @@ export default function Form({
         />
         <br />
         <TextField
-        sx={{
-          "width": "40ch",
-        }}
+          sx={{
+            width: "40ch",
+          }}
           id="last-name"
           label="Last Name"
           variant="standard"
@@ -47,9 +50,9 @@ export default function Form({
         />
         <br />
         <TextField
-        sx={{
-          "width": "40ch",
-        }}
+          sx={{
+            width: "40ch",
+          }}
           id="email"
           label="Email"
           variant="standard"
@@ -59,9 +62,9 @@ export default function Form({
         />
         <br />
         <TextField
-        sx={{
-          "width": "40ch",
-        }}
+          sx={{
+            width: "40ch",
+          }}
           id="phone-number"
           label="Phone Number"
           variant="standard"
@@ -71,9 +74,9 @@ export default function Form({
         />
         <br />
         <TextField
-        sx={{
-          "width": "40ch",
-        }}
+          sx={{
+            width: "40ch",
+          }}
           id="city"
           label="City"
           variant="standard"
@@ -82,16 +85,22 @@ export default function Form({
           onChange={onValuesChange}
         />
         <br />
-        <Button variant="contained" component="label" >
+        <Button variant="contained" component="label">
           Upload Photo
-          <input hidden accept="image/*" multiple type="file" onChange={onPhotoChange} />
+          <input
+            hidden
+            accept="image/*"
+            multiple
+            type="file"
+            onChange={onPhotoChange}
+          />
         </Button>
         <br />
         <Typography variant="h5">Education Information </Typography>
         <TextField
-        sx={{
-          "width": "40ch",
-        }}
+          sx={{
+            width: "40ch",
+          }}
           id="university"
           label="University"
           variant="standard"
@@ -101,9 +110,9 @@ export default function Form({
         />
         <br />
         <TextField
-        sx={{
-          "width": "40ch",
-        }}
+          sx={{
+            width: "40ch",
+          }}
           id="degree"
           label="Degree"
           variant="standard"
@@ -113,9 +122,9 @@ export default function Form({
         />
         <br />
         <TextField
-        sx={{
-          "width": "40ch",
-        }}
+          sx={{
+            width: "40ch",
+          }}
           id="education-start"
           label="Year You Begun Studies"
           variant="standard"
@@ -125,9 +134,9 @@ export default function Form({
         />
         <br />
         <TextField
-        sx={{
-          "width": "40ch",
-        }}
+          sx={{
+            width: "40ch",
+          }}
           id="education-end"
           label="Year You Ended Studies"
           variant="standard"
@@ -138,9 +147,9 @@ export default function Form({
         <br />
         <Typography variant="h5">Experience Information </Typography>
         <TextField
-        sx={{
-          "width": "40ch",
-        }}
+          sx={{
+            width: "40ch",
+          }}
           id="experience"
           multiline
           label="Describe Your Previous Experience"
@@ -151,9 +160,9 @@ export default function Form({
         />
         <br />
         <TextField
-        sx={{
-          "width": "40ch",
-        }}
+          sx={{
+            width: "40ch",
+          }}
           id="experience-start"
           label="Year You Started Your Job"
           variant="standard"
@@ -163,9 +172,9 @@ export default function Form({
         />
         <br />
         <TextField
-        sx={{
-          "width": "40ch",
-        }}
+          sx={{
+            width: "40ch",
+          }}
           id="experience-end"
           label="Year You Ended"
           variant="standard"

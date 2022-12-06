@@ -6,3 +6,7 @@ body {
   display: grid;
   grid-template-columns: 2fr 1fr;
 }
+
+#title {
+  font-size: 4rem;
+}

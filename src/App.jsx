@@ -32,9 +32,23 @@ function App() {
     console.log(photo);
   }
 
-  function handleSubmit(e) {
+  function handleAutoGenerate(e) {
     e.preventDefault();
-    console.log(values);
+    setValues({
+    firstName: "Richard",
+    lastName: "Sienkowsky",
+    email: "richard@sienkowsky@doggo.com",
+    phone: "600600600",
+    city: "Dog Ville",
+    university: "Woof University",
+    degree: "Dog 101",
+    educationStart: "2017",
+    educationEnd: "2022",
+    experience: "I've been a dog since birth. Being a dog gave me great opportunities for pets and treats. During my work there I've learnt how to get pets from everyone and make evryone happy!",
+    experienceStart: "2018",
+    experienceEnd: "2022",
+    })
+    setPhoto("../src/assets/ryszard.jpg")
   }
 
   function handleResetClick(e) {
@@ -62,8 +76,8 @@ function App() {
         values={values}
         onValuesChange={onValuesChange}
         onPhotoChange={onPhotoChange}
-        handleSubmit={handleSubmit}
         handleResetClick={handleResetClick}
+        handleAutoGenerate={handleAutoGenerate}
       />
       <Result values={values} photoUrl={photo} />
     </>

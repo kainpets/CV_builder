@@ -8,6 +8,7 @@ export default function Form({
   onValuesChange,
   handleResetClick,
   onPhotoChange,
+  handleAutoGenerate,
 }) {
   return (
     <>
@@ -185,6 +186,10 @@ export default function Form({
         <br />
         <Button variant="contained" type="reset" onClick={handleResetClick}>
           Reset
+        </Button>
+        <br />
+        <Button variant="contained" onClick={handleAutoGenerate}>
+          Auto Generate
         </Button>
         <br />
       </Box>

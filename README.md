@@ -1,6 +1,6 @@
 # Resume Generator
 
-A React app that allows users to quickly generate a CV, print it or download it
+A React app that allows users to quickly generate a CV, print it or download it as PDF file.
 
 [Live Demo] https://kainpets.github.io/CV_builder/
 

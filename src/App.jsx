@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Form from "./components/Form.jsx";
 import Result from "./components/Result";
+import ryszard from "./assets/ryszard.jpg"
 
 function App() {
   const [values, setValues] = useState({
@@ -47,7 +48,7 @@ function App() {
     experienceStart: "2018",
     experienceEnd: "2022",
     })
-    setPhoto("./src/assets/ryszard.jpg")
+    setPhoto(ryszard);
   }
 
   function handleResetClick(e) {

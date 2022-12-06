@@ -8,6 +8,8 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import ReactToPrint from 'react-to-print';
+import Button from "@mui/material/Button";
+
 
 export default function Result({ values, photoUrl }) {
   const componentRef = useRef();
@@ -98,7 +100,7 @@ export default function Result({ values, photoUrl }) {
       </TableContainer>
       </Box>
 <ReactToPrint 
-trigger={() => <button>Print this out!</button>}
+trigger={() => <Button variant="contained">Print</Button>}
 content={() => componentRef.current}
 ></ReactToPrint>
     </>
